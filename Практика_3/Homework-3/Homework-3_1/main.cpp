@@ -1,10 +1,11 @@
 #include <iostream>
+#include <locale.h>
 
 using namespace std;
 extern const int a,b,c,d; //Третье задание
 int main()
 {
-
+    setlocale(LC_CTYPE, "");
     int input, i,j,k;
     int arr[3][3][3]={0};
     int* p;
