@@ -1,10 +1,13 @@
 #include <iostream>
+#include <locale.h>
 
 using namespace std;
 const int a3=10, b3=10;
 
+
 int main()
 {
+    setlocale(LC_CTYPE, "");
     int input;
     while(true)
     {
