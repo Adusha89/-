@@ -1,5 +1,6 @@
 #include <math.h>
 #include <iostream>
+
 int sum_el_arr(int* arr,int len)//Сумма элементов массива
 {
     int sum=0;

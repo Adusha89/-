@@ -108,7 +108,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "foo.hpp",
+			"path" : "foo.h",
 			"sourceGroupIndex" : 1
 		},
 		{
