@@ -9,6 +9,7 @@ using namespace HW5;
 
 int main()
 {
+
     setlocale(LC_CTYPE, "");
     int arr[]={1,0,1,1,1,1,0,1,1};//Массив для первого задания
     std::cout << "Оригинальный массив для первого задания:\n";

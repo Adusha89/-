@@ -1,6 +1,15 @@
 #include <math.h>
 #include <iostream>
+#include "foo.hpp"
+namespace HW5
+{
+void print_arr(int* arr,int len)//Печать массива
+{
+    for(int i=0;i<len;i++)
+        std::cout << arr[i]<<" ";
+    std::cout << "\n";
 
+}
 int sum_el_arr(int* arr,int len)//Сумма элементов массива
 {
     int sum=0;
@@ -54,10 +63,10 @@ void four_task(int* arr,int len,int n)//Четвертое задание
         }
     }
 }
-
-void print_arr(int* arr,int len)//Печать массива
+void five_task()
 {
-    for(int i=0;i<len;i++)
-        std::cout << arr[i]<<" ";
-    std::cout << "\n";
+
 }
+}
+
+
