@@ -1,0 +1,3 @@
+/home/andrew/Рабочий стол/OsnovyCPP/Практика_6/build-Homework-6-Desktop_Qt_6_0_2_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/andrew/Рабочий стол/OsnovyCPP/Практика_6/build-Homework-6-Desktop_Qt_6_0_2_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/andrew/Рабочий стол/OsnovyCPP/Практика_6/build-Homework-6-Desktop_Qt_6_0_2_GCC_64bit-Debug/CMakeFiles/Homework-6.dir
