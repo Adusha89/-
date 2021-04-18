@@ -2,10 +2,21 @@
 #include <fstream>
 #include <cstdio>
 using namespace std;
+void CLOSE()
+{
+
+}
+template <typename FirstArg, typename... Arg>
+void CLOSE(FirstArg& first_arg, Arg&... arg)
+{
+    first_arg.close();
+    CLOSE(arg...);
+}
 void create(const char*);//Создание .txt
 void con(fstream&,fstream&,fstream&);//Объединение файлов
 void zap(fstream&);//Заполнение .txt
 int value(fstream&);//Размер файла
+void search(void);
 int main()
 {
     const char name[]="file.txt";
@@ -18,6 +29,11 @@ int main()
     zap(f);
     zap(f1);
     con(f,f1,b);
+    CLOSE(f,f1,b);
+//    f.close();
+//    f1.close();
+//    b.close();
+
     return 0;
 }
 void create(const char* name)//Создание .txt
@@ -36,27 +52,29 @@ void zap(fstream& f)//Заполнение файла .txt
 }
 void con(fstream& f,fstream& f1,fstream& b)//Объединение файлов
 {
-    int raz=value(f)+value(f1);
-    char* buf=new char [raz];
-    f.clear();
-    f.seekg( 0 );
-    f1.clear();
-    f1.seekg( 0 );
-    f.getline(buf, raz);
-    f1.getline((buf+value(f)),raz);
-    cout << buf;
-    b << buf;
+    int raz1=value(f);
+    int lenght=raz1+value(f1);
+    char* buf=new char [lenght];
+    f.read(buf,lenght);
+    f1.read((buf+raz1),lenght);
+    b.write(buf,lenght);
+    delete []buf;
 
 }
-int value(fstream& f)
+int value(fstream& f)//Размер файла
 {
     int i=0;
-    f.clear();
-    f.seekg( 0 );
-    while(!f.eof())
-    {
-        f.get();
-        i++;
-    }
-    return i-1;
+    f.seekg(0,ios::end);
+    i=f.tellg();
+    f.seekg(0,ios::beg);
+    return i;
+}
+void search()
+{
+    char name3[50];
+    char sword;
+    cout << "Введите название файла\n";
+    cin >> name3;
+    cout << "Введите слово для поиска\n";
+    cin >> sword;
 }
