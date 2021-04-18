@@ -2,16 +2,6 @@
 #include <fstream>
 #include <cstdio>
 using namespace std;
-void CLOSE()
-{
-
-}
-template <typename FirstArg, typename... Arg>
-void CLOSE(FirstArg& first_arg, Arg&... arg)
-{
-    first_arg.close();
-    CLOSE(arg...);
-}
 void create(const char*);//Создание .txt
 void con(fstream&,fstream&,fstream&);//Объединение файлов
 void zap(fstream&);//Заполнение .txt
@@ -29,10 +19,9 @@ int main()
     zap(f);
     zap(f1);
     con(f,f1,b);
-    CLOSE(f,f1,b);
-//    f.close();
-//    f1.close();
-//    b.close();
+    f.close();
+    f1.close();
+    b.close();
 
     return 0;
 }
