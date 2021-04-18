@@ -6,7 +6,7 @@ void create(const char*);//Создание .txt
 void con(fstream&,fstream&,fstream&);//Объединение файлов
 void zap(fstream&);//Заполнение .txt
 size_t value(fstream&);//Размер файла
-void search(void);
+void search(void);//Поиск слова в файле
 int main()
 {
     const char name[]="file.txt";
