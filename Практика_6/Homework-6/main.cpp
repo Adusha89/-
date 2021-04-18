@@ -5,7 +5,7 @@ using namespace std;
 void create(const char*);//Создание .txt
 void con(fstream&,fstream&,fstream&);//Объединение файлов
 void zap(fstream&);//Заполнение .txt
-int value(fstream&);//Размер файла
+size_t value(fstream&);//Размер файла
 void search(void);
 int main()
 {
@@ -22,7 +22,7 @@ int main()
     f.close();
     f1.close();
     b.close();
-
+    search();
     return 0;
 }
 void create(const char* name)//Создание .txt
@@ -41,8 +41,8 @@ void zap(fstream& f)//Заполнение файла .txt
 }
 void con(fstream& f,fstream& f1,fstream& b)//Объединение файлов
 {
-    int raz1=value(f);
-    int lenght=raz1+value(f1);
+    size_t raz1=value(f);
+    size_t lenght=raz1+value(f1);
     char* buf=new char [lenght];
     f.read(buf,lenght);
     f1.read((buf+raz1),lenght);
@@ -50,20 +50,55 @@ void con(fstream& f,fstream& f1,fstream& b)//Объединение файлов
     delete []buf;
 
 }
-int value(fstream& f)//Размер файла
+size_t value(fstream& f)//Размер файла
 {
-    int i=0;
-    f.seekg(0,ios::end);
+    size_t i=0;
+    f.seekg(0,ios_base::end);
     i=f.tellg();
-    f.seekg(0,ios::beg);
+    f.seekg(0,ios_base::beg);
     return i;
 }
 void search()
 {
-    char name3[50];
-    char sword;
-    cout << "Введите название файла\n";
-    cin >> name3;
+    char name3[50], sword[50];
+    fstream f;
+    bool flag=false;
+
+    while(true)
+    {
+        cout << "Введите название файла (myfile.txt)\n";
+        cin >> name3;
+        f.open(name3);
+        if(f.is_open()) break;
+        cout << "Файл не открыт\n";
+
+    }
+    size_t lenght=value(f);
+    char* boof = new char[lenght];
     cout << "Введите слово для поиска\n";
     cin >> sword;
+    while(!f.eof())
+    {
+        f >> boof;
+        for(int i=0;sword[i]!='\0';i++)
+        {
+
+            if(sword[i]==boof[i]) flag=true;
+            else
+            {
+                flag=false;
+                break;
+            }
+            if(((boof[i+1]=='\0')&&(sword[i+1]!='\0'))||((boof[i+1]!='\0')&&(sword[i+1]=='\0')))
+            {
+                flag=false;
+                break;
+            }
+        }
+        if(flag) break;
+    }
+    if(flag) cout << "Слово "<<sword<<" есть в файле\n";
+    else cout << "Слова "<<sword<<" нет в файле\n";
+    delete []boof;
+    f.close();
 }
