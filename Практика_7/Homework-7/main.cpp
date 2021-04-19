@@ -8,7 +8,7 @@ int main()
 {
     setlocale(LC_CTYPE, "");
 
-    //first_task();
+    first_task();
     second_task();
     return 0;
 }
@@ -41,4 +41,7 @@ void second_task()
         std::cout << "\n";
     }
     std::cout << ell_arr(arr,1,2) <<"\n";
+    for(int i=0;i<n;i++)
+        delete[] arr[i];
+    delete[] arr;
 }
