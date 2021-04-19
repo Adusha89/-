@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Homework-7",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Homework-7::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Homework-7-Debug-2286b7ad0ecdbfd7d77f.json",
+					"name" : "Homework-7",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/andrew/Рабочий стол/OsnovyCPP/Практика_7/build-Homework-7-Desktop_Qt_6_0_2_GCC_64bit-Debug",
+		"source" : "/home/andrew/Рабочий стол/OsnovyCPP/Практика_7/Homework-7"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}
