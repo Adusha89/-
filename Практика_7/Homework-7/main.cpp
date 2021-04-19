@@ -2,14 +2,17 @@
 #include <locale.h>
 #define is_range(x,y) ((((x)>=0)&&((x)<(y)))?true:false)
 #define ell_arr(arr,i,j) (*( *( (arr) + (i) ) + (j) ))
+#define number_el(arr,type) ((sizeof((arr)))/(sizeof((type))))
 void first_task(void);//Первое задание
 void second_task(void);//Второе задание
+void third_task(void);//Третье задание
 int main()
 {
     setlocale(LC_CTYPE, "");
 
     first_task();
     second_task();
+    third_task();
     return 0;
 }
 void first_task()
@@ -44,4 +47,9 @@ void second_task()
     for(int i=0;i<n;i++)
         delete[] arr[i];
     delete[] arr;
+}
+void third_task()
+{
+    int arr[125];
+    std::cout << number_el(arr,"int") << "\n";
 }
