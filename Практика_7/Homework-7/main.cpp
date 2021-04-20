@@ -2,7 +2,7 @@
 #include <locale.h>
 #define is_range(x,y) ((((x)>=0)&&((x)<(y)))?true:false)
 #define ell_arr(arr,i,j) (*( *( (arr) + (i) ) + (j) ))
-#define number_el(arr,type) ((sizeof((arr)))/(sizeof((type))))
+#define number_el(arr) ((sizeof((arr)))/(sizeof((arr[0]))))
 void first_task(void);//Первое задание
 void second_task(void);//Второе задание
 void third_task(void);//Третье задание
@@ -51,5 +51,5 @@ void second_task()
 void third_task()
 {
     int arr[125];
-    std::cout << number_el(arr,"int") << "\n";
+    std::cout << number_el(arr) << "\n";
 }
