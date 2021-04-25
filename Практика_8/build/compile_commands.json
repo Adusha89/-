@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -g -std=gnu++17 -o CMakeFiles/Homework-8.dir/main.cpp.o -c \"/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/main.cpp\"",
+  "file": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/main.cpp"
+},
+{
+  "directory": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -g -std=gnu++17 -o CMakeFiles/Homework-8.dir/logic.cpp.o -c \"/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/logic.cpp\"",
+  "file": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/logic.cpp"
+},
+{
+  "directory": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -g -std=gnu++17 -o CMakeFiles/Homework-8.dir/io.cpp.o -c \"/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/io.cpp\"",
+  "file": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/io.cpp"
+},
+{
+  "directory": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -g -std=gnu++17 -o CMakeFiles/Homework-8.dir/ai.cpp.o -c \"/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/ai.cpp\"",
+  "file": "/home/andrew/Рабочий стол/OsnovyCPP/Практика_8/ai.cpp"
+}
+]

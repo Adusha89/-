@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++-9 -g -rdynamic CMakeFiles/Homework-8.dir/main.cpp.o CMakeFiles/Homework-8.dir/logic.cpp.o CMakeFiles/Homework-8.dir/io.cpp.o CMakeFiles/Homework-8.dir/ai.cpp.o -o Homework-8 
