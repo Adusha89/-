@@ -2,13 +2,7 @@
 #include "header.hpp"
 #include <iostream>
 
-size_t FIELD_WIDTH;
-void Get_Field (GameField* p)
-{
-    std::cout << "Input Field Width\n";
-    std::cin >> FIELD_WIDTH;
-    *p = new CellState[FIELD_WIDTH*FIELD_WIDTH];
-}
+
 
 
 bool is_valid_pos(size_t row, size_t col) { //Проверка координат
@@ -85,10 +79,12 @@ TurnOutCome check_turn_outcome(GameField const& field) { //Результат х
 
 }
 
-CellState sign_to_cell(PlayerSign sign) {
-    return sign == PlayerSign::X ? CellState::X : CellState::O;
+CellState sign_to_cell(PlayerSign sign, bool flag) {
+    if(flag) return sign == PlayerSign::X ? CellState::X : CellState::O;
+    return sign == PlayerSign::X ? CellState::O : CellState::X;//Если мы за О, то конвертируем
 }
 
 PlayerSign next_player(PlayerSign current) { // Смена игрока
     return current == PlayerSign::X ? PlayerSign::O : PlayerSign::X;
 }
+

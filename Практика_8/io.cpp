@@ -8,6 +8,24 @@ void print_greeting() {
     std::cout << "Welcome to the game\n";
 }
 
+size_t FIELD_WIDTH;
+void Get_Field (GameField* p)
+{
+    bool flag = false;
+    std::cout << "Input Field Width\n";
+    while(!flag) {
+        std::cin >> FIELD_WIDTH;
+        if(std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+            std::cout << "Error: please input numbers!\nTry yet<";
+        }
+        else flag = true;
+    }
+    
+    *p = new CellState[FIELD_WIDTH*FIELD_WIDTH]{};
+    
+}
 
 
 Pos query_player_move(GameField const& field) { //Запрос хода
@@ -22,15 +40,15 @@ Pos query_player_move(GameField const& field) { //Запрос хода
         if(std::cin.fail()) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-            std::cout << "Error: please input numbers!\n<";
+            std::cout << "Error: please input numbers!\nTry yet<";
         }
 
         else if (!is_valid_pos(pos.x, pos.y)) {
-            std::cout << "Eror: position is out of field\n<";
+            std::cout << "Eror: position is out of field\nTry yet<";
         }
 
         else if(get_cell(field, pos.x, pos.y) != CellState::Empty) {
-            std::cout << "Eror: Cell is not empty\n<";
+            std::cout << "Eror: Cell is not empty\nTry yet<";
         }
         else {
             ok = true;
@@ -91,4 +109,19 @@ void print_game_outcome(TurnOutCome outcome) { // Результат игры
             break;
     }
 
+}
+
+PlayerSign get_current_player(bool& flag) {//За кого играем
+    char CP;
+    std::cout << "Input Sign player (X or O)\n< ";
+    std::cin >> CP;
+    switch (CP)
+    {
+    case 'X':
+        return PlayerSign::X;
+    
+    default:
+        flag = false;
+        return PlayerSign::O;
+    }
 }

@@ -35,7 +35,7 @@ bool set_cell(GameField& , size_t , size_t , CellState ); //Установка �
 bool is_draw(GameField const& ); //Проверка на ничью
 CellState is_line_full(GameField const& , size_t , size_t , short , short ); //Проверка строк
 TurnOutCome check_turn_outcome(GameField const& ); //Результат хода
-CellState sign_to_cell(PlayerSign );
+CellState sign_to_cell(PlayerSign, bool );
 PlayerSign next_player(PlayerSign ); // Смена игрока
 
 //Прототипы IO
@@ -44,6 +44,7 @@ Pos query_player_move(GameField const& ); //Запрос хода
 void print_cell(CellState ); // Печать ячейки
 void print_field(GameField const& ); // Отрисовка поля
 void print_game_outcome(TurnOutCome ); // Результат игры
+PlayerSign get_current_player(bool&);
 
 //Прототипы AI
 size_t get_empty_cells(size_t* , GameField const& );

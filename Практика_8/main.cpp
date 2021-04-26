@@ -18,17 +18,20 @@ int main() {
 
     GameField field;
     Get_Field(&field);
+    
     TurnOutCome outcome {};
-    PlayerSign current_player = PlayerSign::X;
+    bool flag = true;//По умолчанию ходит Х
+    PlayerSign current_player = get_current_player(flag);
     do {
         Pos pos;
+
         if(current_player == PlayerSign::X) {
             pos = query_player_move(field);
         } else {
             pos = query_ai_move(field);
-        }
-        
-        set_cell(field, pos.x, pos.y, sign_to_cell(current_player));       
+        } 
+         
+        set_cell(field, pos.x, pos.y, sign_to_cell(current_player, flag));       
 
         outcome = check_turn_outcome(field);
         print_field(field);
@@ -37,6 +40,6 @@ int main() {
     } while (outcome == TurnOutCome::CONTINUE);
 
     print_game_outcome(outcome);
-
+    delete [] field;
     return 0;
 }

@@ -32,7 +32,7 @@ Pos get_random_empty_cell(GameField const& field)
 }
 
 Pos make_predictive_move(GameField const& field) {
-    GameField test_field;
+    GameField test_field = new CellState[FIELD_WIDTH*FIELD_WIDTH]{};
     std::copy_n(field, FIELD_WIDTH * FIELD_WIDTH, test_field);
 
     size_t* free_cells = new size_t[FIELD_WIDTH * FIELD_WIDTH];
@@ -50,6 +50,8 @@ Pos make_predictive_move(GameField const& field) {
         }
         test_field[free_cell_idx] = CellState::Empty;
     }
+    delete [] test_field;
+    delete [] free_cells;
     return get_random_empty_cell(field);
 }
 
