@@ -115,6 +115,14 @@ PlayerSign get_current_player(bool& flag) {//За кого играем
     char CP;
     std::cout << "Input Sign player (X or O)\n< ";
     std::cin >> CP;
+    while(true){
+        if(CP == 'X' || CP == 'O'){
+            break;
+        } else {
+            std::cout << "Incorrect symbol. Try yet\n< ";
+            std::cin >> CP;
+        }
+    }
     switch (CP)
     {
     case 'X':

@@ -6,8 +6,7 @@
 #include "math.h"
 
 int main() {
-    // Human is always X
-    // AI is always O
+    
 
     // while game is not over
     //  - read player input / run AI
@@ -17,11 +16,12 @@ int main() {
     print_greeting();
 
     GameField field;
+    bool flag = true;//По умолчанию ходит Х
+    PlayerSign current_player = get_current_player(flag);
     Get_Field(&field);
     
     TurnOutCome outcome {};
-    bool flag = true;//По умолчанию ходит Х
-    PlayerSign current_player = get_current_player(flag);
+    
     do {
         Pos pos;
 
